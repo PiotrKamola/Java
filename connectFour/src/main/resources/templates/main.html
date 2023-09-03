@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+
+<style>
+table, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+</style>
+
+<body>
+
+<table>
+    <tr th:each="i: ${table}">
+        <td style="height:100px"; width="100px" th:each="item: ${i}">
+            <span th:if="${item == 0}">
+                <form th:href="@{/}">
+                    <input type="submit" th:value="${item}"/>
+                        <img th:src="@{/img/player1.jpg}"/>
+                    </input>
+                </form>
+<!--                <a th:href="@{/}">-->
+<!--                    <img th:src="@{/img/empty.jpg}"/>-->
+<!--                    <button name="item" th:value="${item}"/>-->
+<!--                        <img th:src="@{/img/player1.jpg}"/>-->
+<!--                    </button>-->
+<!--                </a>-->
+            </span>
+            <span th:if="${item == 1}">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/player1.jpg}"/>
+                </a>
+            </span>
+            <span th:if="${item == -1}">
+                <a th:href="@{/}">
+                    <img th:src="@{/img/player2.jpg}"/>
+                </a>
+            </span>
+        </td>
+    <tr>
+</table>
+
+</body>
+
+<script>
+
+</script>
+
+</html>
