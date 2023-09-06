@@ -1,13 +1,16 @@
 package com.example.connectFour.game;
 
+import org.springframework.stereotype.Controller;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Controller
 public class Game {
-    int whoTurn;
-    int rows=6;
-    int columns=7;
-    int[][] table = new int[rows][columns];
+    private static int whoTurn = 1;
+    private int rows=6;
+    private int columns=7;
+    private int[][] table = new int[rows][columns];
 
     public int getWhoTurn() {
         return whoTurn;
@@ -42,26 +45,31 @@ public class Game {
     }
 
     public void makeMove(int column){
+//        printGame();
+//        System.out.println("CHOOSEN COLUMS="+ column);
         boolean isFull = false;
-        if(table[0][column] != whoTurn){
-            table[0][column] = whoTurn;
-        }else if(table[1][column] != whoTurn){
-            table[1][column] = whoTurn;
-        }else if(table[2][column] != whoTurn){
-            table[2][column] = whoTurn;
-        }else if(table[3][column] != whoTurn){
-            table[3][column] = whoTurn;
-        }else if(table[4][column] != whoTurn){
-            table[4][column] = whoTurn;
-        }else if(table[5][column] != whoTurn){
+        if(table[5][column] == 0){
             table[5][column] = whoTurn;
+        }else if(table[4][column] == 0){
+            table[4][column] = whoTurn;
+        }else if(table[3][column] == 0){
+            table[3][column] = whoTurn;
+        }else if(table[2][column] == 0){
+            table[2][column] = whoTurn;
+        }else if(table[1][column] == 0){
+            table[1][column] = whoTurn;
+        }else if(table[0][column] == 0){
+            table[0][column] = whoTurn;
         }else{
             isFull = true;
         }
 
         if(!isFull){
             checkWinner();
+            whoTurn = whoTurn * -1;
         }
+
+//        printGame();
     }
 
     public int checkWinner(){
@@ -106,5 +114,15 @@ public class Game {
         }
 
         return 0;
+    }
+
+    public void printGame(){
+        for(int i = 0; i<getRows(); i++){
+            for(int j=0; j<getColumns(); j++){
+                System.out.print(getTable()[i][j]);
+            }
+            System.out.println("");
+        }
+        System.out.println("---");
     }
 }

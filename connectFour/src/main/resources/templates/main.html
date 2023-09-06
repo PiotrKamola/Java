@@ -9,6 +9,12 @@
 table, td {
   border: 1px solid black;
   border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+form {
+margin: 0 auto;
+width:250px;
 }
 </style>
 
@@ -17,37 +23,38 @@ table, td {
 <table>
     <tr th:each="i: ${table}">
         <td style="height:100px"; width="100px" th:each="item: ${i}">
+
             <span th:if="${item == 0}">
-                <form th:href="@{/}">
-                    <input type="submit" th:value="${item}"/>
-                        <img th:src="@{/img/player1.jpg}"/>
-                    </input>
-                </form>
-<!--                <a th:href="@{/}">-->
-<!--                    <img th:src="@{/img/empty.jpg}"/>-->
-<!--                    <button name="item" th:value="${item}"/>-->
-<!--                        <img th:src="@{/img/player1.jpg}"/>-->
-<!--                    </button>-->
-<!--                </a>-->
+                <img th:src="@{/img/empty.jpg}"/>
             </span>
+
             <span th:if="${item == 1}">
-                <a th:href="@{/}">
-                    <img th:src="@{/img/player1.jpg}"/>
-                </a>
+                <img th:src="@{/img/player1.jpg}"/>
             </span>
+
             <span th:if="${item == -1}">
-                <a th:href="@{/}">
-                    <img th:src="@{/img/player2.jpg}"/>
-                </a>
+                <img th:src="@{/img/player2.jpg}"/>
             </span>
         </td>
     <tr>
 </table>
 
+<form th:action="@{/}" th:object="${moveHelp}" method="post">
+    <select class="form-control border-2" name="column" id="column">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+    </select>
+
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-dark py-2 p-5">Accept</button>
+    </div>
+</form>
+
 </body>
-
-<script>
-
-</script>
 
 </html>
