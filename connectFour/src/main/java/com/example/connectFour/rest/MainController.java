@@ -28,15 +28,13 @@ public class MainController {
 
     @PostMapping("")
     public String move(Model model, @ModelAttribute MoveHelp moveHelp) {
-        System.out.println("BEFORE:");
-        game.printGame();
 
-        model.addAttribute("table", game.getTable());
+        model.addAttribute("table", gameService.getTable());
         model.addAttribute("moveHelp", moveHelp);
 
-        game.makeMove(moveHelp.getColumn() - 1);
-        System.out.println("AFTER:");
-        game.printGame();
+        if(gameService.makeMove(moveHelp.getColumn() - 1) != 0) {
+            return "winner";
+        }
         return "main";
     }
 }
