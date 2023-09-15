@@ -33,8 +33,20 @@ public class MainController {
         model.addAttribute("moveHelp", moveHelp);
 
         if(gameService.makeMove(moveHelp.getColumn() - 1) != 0) {
-            return "winner";
+            return returnWinner(model, gameService.checkWinner());
         }
+        return "main";
+    }
+
+    public String returnWinner(Model model, @ModelAttribute int winner){
+        model.addAttribute("winner", winner);
+        return "winner";
+    }
+
+    @GetMapping("/clear")
+    public String clearGame(Model model) {
+        gameService.clearTable();
+        model.addAttribute("table", gameService.getTable());
         return "main";
     }
 }

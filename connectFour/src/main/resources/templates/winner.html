@@ -3,8 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Winner</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
-    WINNER
+    <div class="container">
+        The winner is
+        <span th:if="${winner == 1}">
+            Player 1 (yellow)
+        </span>
+        <span th:if="${winner == -1}">
+            Player 2 (red)
+        </span>
+
+        <form th:action="@{/clear}" method="get">
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-dark py-2 p-5">New game</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
