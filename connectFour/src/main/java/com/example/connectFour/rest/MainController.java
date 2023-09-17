@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 @Controller
 @RequestMapping("")
 public class MainController {
@@ -23,6 +25,8 @@ public class MainController {
     public String menu(Model model) {
         model.addAttribute("table", gameService.getTable());
         model.addAttribute("moveHelp", new MoveHelp());
+        int[] columnsTable = fillTable(game.getColumns());
+        model.addAttribute("columns", columnsTable);
         return "main";
     }
 
@@ -31,6 +35,8 @@ public class MainController {
 
         model.addAttribute("table", gameService.getTable());
         model.addAttribute("moveHelp", moveHelp);
+        int[] columnsTable = fillTable(game.getColumns());
+        model.addAttribute("columns", columnsTable);
 
         if(gameService.makeMove(moveHelp.getColumn() - 1) != 0) {
             return returnWinner(model, gameService.checkWinner());
@@ -47,6 +53,17 @@ public class MainController {
     public String clearGame(Model model) {
         gameService.clearTable();
         model.addAttribute("table", gameService.getTable());
+        int[] columnsTable = fillTable(game.getColumns());
+        model.addAttribute("columns", columnsTable);
         return "main";
     }
+
+    int[] fillTable(int columns){
+        int[] helpArray = new int[columns];
+        for(int i=0; i<columns; i++){
+            helpArray[i] = i+1;
+        }
+        return helpArray;
+    }
+
 }

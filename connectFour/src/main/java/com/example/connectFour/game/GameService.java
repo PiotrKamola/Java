@@ -111,4 +111,8 @@ public class GameService {
         }
         System.out.println("---");
     }
+
+    public int getColumns(){
+        return game.getColumns();
+    }
 }
