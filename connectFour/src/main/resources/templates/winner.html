@@ -7,13 +7,44 @@
 </head>
 <body>
     <div class="container">
-        The winner is
-        <span th:if="${winner == 1}">
-            Player 1 (yellow)
-        </span>
-        <span th:if="${winner == -1}">
-            Player 2 (red)
-        </span>
+        <div class="row">
+            <img th:src="@{/img/winner.jpg}"/>
+
+            <span th:if="${winner == 1}">
+                <img th:src="@{/img/player1.jpg}" width="100" height="100"/>
+            </span>
+
+            <span th:if="${winner == -1}">
+                <img th:src="@{/img/player2.jpg}" width="100" height="100"/>
+            </span>
+        </div>
+
+        <button id="myBtn">Show table</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                    <table>
+                        <tr th:each="i: ${table}">
+                            <td th:each="item: ${i}">
+                                <span th:if="${item == 0}">
+                                    <img th:src="@{/img/empty.jpg}" width="100" height="100"/>
+                                </span>
+
+                                <span th:if="${item == 1}">
+                                    <img th:src="@{/img/player1.jpg}" width="100" height="100"/>
+                                </span>
+
+                                <span th:if="${item == -1}">
+                                    <img th:src="@{/img/player2.jpg}" width="100" height="100"/>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+            </div>
+
+        </div>
+
 
         <form th:action="@{/clear}" method="get">
             <div class="text-center mt-4">
@@ -22,4 +53,27 @@
         </form>
     </div>
 </body>
+
+<script>
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
 </html>

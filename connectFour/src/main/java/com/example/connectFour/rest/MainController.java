@@ -25,6 +25,7 @@ public class MainController {
     public String menu(Model model) {
         model.addAttribute("table", gameService.getTable());
         model.addAttribute("moveHelp", new MoveHelp());
+        model.addAttribute("whoTurn", game.getWhoTurn());
         int[] columnsTable = fillTable(game.getColumns());
         model.addAttribute("columns", columnsTable);
         return "main";
@@ -35,6 +36,7 @@ public class MainController {
 
         model.addAttribute("table", gameService.getTable());
         model.addAttribute("moveHelp", moveHelp);
+        model.addAttribute("whoTurn", game.getWhoTurn()*(-1));
         int[] columnsTable = fillTable(game.getColumns());
         model.addAttribute("columns", columnsTable);
 
@@ -46,6 +48,7 @@ public class MainController {
 
     public String returnWinner(Model model, @ModelAttribute int winner){
         model.addAttribute("winner", winner);
+        model.addAttribute("table", gameService.getTable());
         return "winner";
     }
 
@@ -53,6 +56,7 @@ public class MainController {
     public String clearGame(Model model) {
         gameService.clearTable();
         model.addAttribute("table", gameService.getTable());
+        model.addAttribute("whoTurn", game.getWhoTurn());
         int[] columnsTable = fillTable(game.getColumns());
         model.addAttribute("columns", columnsTable);
         return "main";

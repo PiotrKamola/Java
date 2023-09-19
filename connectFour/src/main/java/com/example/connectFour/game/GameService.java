@@ -15,6 +15,10 @@ public class GameService {
     }
 
     public int makeMove(int column){
+        if(game.getWinner() != 0){
+            return game.getWinner();
+        }
+
         boolean isFull = false;
         if(game.getTable()[5][column] == 0){
             game.getTable()[5][column] = game.getWhoTurn();
@@ -36,7 +40,8 @@ public class GameService {
             game.setWhoTurn(game.getWhoTurn()*(-1));
         }
 
-        return checkWinner();
+        game.setWinner(checkWinner());
+        return game.getWinner();
     }
 
     public int checkWinner(){
@@ -99,6 +104,7 @@ public class GameService {
                     clearTable[i][j] = 0;
             }
         }
+        game.setWinner(0);
         game.setTable(clearTable);
     }
 
