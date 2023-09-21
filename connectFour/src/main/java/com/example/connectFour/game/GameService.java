@@ -19,7 +19,7 @@ public class GameService {
             return game.getWinner();
         }
 
-        boolean isFull = false;
+        boolean isColumnFull = false;
         if(game.getTable()[5][column] == 0){
             game.getTable()[5][column] = game.getWhoTurn();
         }else if(game.getTable()[4][column] == 0){
@@ -33,14 +33,15 @@ public class GameService {
         }else if(game.getTable()[0][column] == 0){
             game.getTable()[0][column] = game.getWhoTurn();
         }else{
-            isFull = true;
+            isColumnFull = true;
         }
 
-        if(!isFull){
+        if(!isColumnFull){
             game.setWhoTurn(game.getWhoTurn()*(-1));
         }
 
         game.setWinner(checkWinner());
+        System.out.println(game.getWhoTurn());
         return game.getWinner();
     }
 
@@ -94,6 +95,10 @@ public class GameService {
             }
         }
 
+        if(isTableFull()){
+            return 3;
+        }
+
         return 0;
     }
 
@@ -120,5 +125,16 @@ public class GameService {
 
     public int getColumns(){
         return game.getColumns();
+    }
+
+    private boolean isTableFull(){
+        for(int i = 0; i<game.getRows(); i++) {
+            for (int j = 0; j < game.getColumns(); j++) {
+                if(game.getTable()[i][j] == 0){
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }

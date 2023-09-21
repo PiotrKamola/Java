@@ -7,17 +7,23 @@
 </head>
 <body>
     <div class="container">
-        <div class="row">
-            <img th:src="@{/img/winner.jpg}"/>
+        <span th:if="${winner == 3}">
+            <img th:src="@{/img/draw.jpg}"/>
+        </span>
 
-            <span th:if="${winner == 1}">
-                <img th:src="@{/img/player1.jpg}" width="100" height="100"/>
-            </span>
+        <span th:if="${winner != 3}">
+            <div class="row">
+                <img th:src="@{/img/winner.jpg}"/>
 
-            <span th:if="${winner == -1}">
-                <img th:src="@{/img/player2.jpg}" width="100" height="100"/>
-            </span>
-        </div>
+                <span th:if="${winner == 1}">
+                    <img th:src="@{/img/player1.jpg}" width="100" height="100"/>
+                </span>
+
+                <span th:if="${winner == -1}">
+                    <img th:src="@{/img/player2.jpg}" width="100" height="100"/>
+                </span>
+            </div>
+        </span>
 
         <button id="myBtn">Show table</button>
 
