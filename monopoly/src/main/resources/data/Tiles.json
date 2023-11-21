@@ -128,7 +128,7 @@
     "upgradeCost": 0,
     "tileNumber": 10,
     "active": false,
-    "specialEvent": "Jail",
+    "specialEvent": "",
     "ownerName": ""
   },
   {

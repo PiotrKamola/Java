@@ -22,4 +22,20 @@ public class Tile {
     private boolean isActive;
     private String specialEvent;
     private String ownerName;
+
+    public static void chanceCard(){
+//        Cards.pullChanceCard();   TODO
+    }
+
+    public static void communityCard(){
+//        Cards.pullCommunityCard();   TODO
+    }
+
+    public static void goToJail(Player player){
+        player.goToJail();
+    }
+
+    public static void payTax(int toPay, Player player){
+        player.payMoney(toPay);
+    }
 }
