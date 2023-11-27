@@ -1,13 +1,21 @@
-package com.Monopoly.Monopoly.player;
+package com.Monopoly.Monopoly.Tile;
+
+import com.Monopoly.Monopoly.player.Player;
+import com.Monopoly.Monopoly.player.PlayerService;
 
 public class Jail {
-    public static void tryToGetOut(Player player){
+    private final PlayerService playerService;
 
+    public Jail(PlayerService playerService){
+        this.playerService = playerService;
+    }
+
+    public void tryToGetOut(Player player){
         if(player.getCardsGettingOutOfJail()!=0){
             boolean wannaGoOut = false;
             if(wannaGoOut = true) {
                 player.setCardsGettingOutOfJail(player.getCardsGettingOutOfJail() - 1);
-                player.getOutOfJail(false);
+                playerService.getOutOfJail(player,false);
             }
         }
 
@@ -17,11 +25,11 @@ public class Jail {
         secondNumber = (int) ((Math.random() * (6)) + 1);
 
         if(firstNumber == secondNumber){
-            player.getOutOfJail(false);
+            playerService.getOutOfJail(player,false);
         }else{
             player.setTimeInJail(player.getTimeInJail() - 1);
             if(player.getTimeInJail() == 0){
-                player.getOutOfJail(true);
+                playerService.getOutOfJail(player,true);
             }
         }
     }

@@ -9,7 +9,7 @@
     "tileNumber": 0,
     "active": false,
     "specialEvent": "start",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Mediter-Ranean Avenue",
@@ -21,7 +21,7 @@
     "tileNumber": 1,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Community chest",
@@ -33,7 +33,7 @@
     "tileNumber": 2,
     "active": true,
     "specialEvent": "communityCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Baltic Avenue",
@@ -45,7 +45,7 @@
     "tileNumber": 3,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Income tax",
@@ -57,7 +57,7 @@
     "tileNumber": 4,
     "active": true,
     "specialEvent": "payTax",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Reading Railroad",
@@ -69,7 +69,7 @@
     "tileNumber": 5,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Oriental Avenue",
@@ -81,7 +81,7 @@
     "tileNumber": 6,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Chance",
@@ -93,7 +93,7 @@
     "tileNumber": 7,
     "active": true,
     "specialEvent": "chanceCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Vermont Avenue",
@@ -105,7 +105,7 @@
     "tileNumber": 8,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Connecticut Avenue",
@@ -117,7 +117,7 @@
     "tileNumber": 9,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Jail",
@@ -129,7 +129,7 @@
     "tileNumber": 10,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "St. Charles Place",
@@ -141,7 +141,7 @@
     "tileNumber": 11,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Electric Company",
@@ -153,7 +153,7 @@
     "tileNumber": 12,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "States Avenue",
@@ -165,7 +165,7 @@
     "tileNumber": 13,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Virginia Avenue",
@@ -177,7 +177,7 @@
     "tileNumber": 14,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Pennsylvania Railroad",
@@ -189,7 +189,7 @@
     "tileNumber": 15,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "St. James Place",
@@ -201,7 +201,7 @@
     "tileNumber": 16,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Community Chest",
@@ -213,7 +213,7 @@
     "tileNumber": 17,
     "active": true,
     "specialEvent": "communityCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Tennessee Avenue",
@@ -225,7 +225,7 @@
     "tileNumber": 18,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "New York Avenue",
@@ -237,7 +237,7 @@
     "tileNumber": 19,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Free Parking",
@@ -249,7 +249,7 @@
     "tileNumber": 20,
     "active": false,
     "specialEvent": "freeParking",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Kentucky Avenue",
@@ -261,7 +261,7 @@
     "tileNumber": 21,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Chance",
@@ -273,7 +273,7 @@
     "tileNumber": 22,
     "active": true,
     "specialEvent": "chanceCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Indiana Avenue",
@@ -285,7 +285,7 @@
     "tileNumber": 23,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Illinois Avenue",
@@ -297,7 +297,7 @@
     "tileNumber": 24,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "B.& O. Railroad",
@@ -309,7 +309,7 @@
     "tileNumber": 25,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Atlantic Avenue",
@@ -321,7 +321,7 @@
     "tileNumber": 26,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
   "placeName": "Ventnor Avenue",
@@ -333,7 +333,7 @@
   "tileNumber": 27,
   "active": false,
   "specialEvent": "",
-  "ownerName": ""
+  "owner": ""
 },
   {
     "placeName": "Water Works",
@@ -345,7 +345,7 @@
     "tileNumber": 28,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Marvin Gardens",
@@ -357,7 +357,7 @@
     "tileNumber": 29,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Go to jail",
@@ -369,7 +369,7 @@
     "tileNumber": 30,
     "active": true,
     "specialEvent": "goToJail",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Pacific Avenue",
@@ -381,7 +381,7 @@
     "tileNumber": 31,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "North Carolina Avenue",
@@ -393,7 +393,7 @@
     "tileNumber": 32,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Community Chest",
@@ -405,7 +405,7 @@
     "tileNumber": 33,
     "active": true,
     "specialEvent": "communityCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Pennsylvania Avenue",
@@ -417,7 +417,7 @@
     "tileNumber": 34,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Short Line",
@@ -429,7 +429,7 @@
     "tileNumber": 35,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Chance",
@@ -441,7 +441,7 @@
     "tileNumber": 36,
     "active": true,
     "specialEvent": "chanceCard",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Park Place",
@@ -453,7 +453,7 @@
     "tileNumber": 37,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Luxury Tax",
@@ -465,7 +465,7 @@
     "tileNumber": 38,
     "active": true,
     "specialEvent": "payTax",
-    "ownerName": ""
+    "owner": ""
   },
   {
     "placeName": "Boardwalk",
@@ -477,6 +477,6 @@
     "tileNumber": 39,
     "active": false,
     "specialEvent": "",
-    "ownerName": ""
+    "owner": ""
   }
 ]

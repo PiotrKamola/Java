@@ -1,0 +1,98 @@
+[
+  {
+    "cardNumber": 0,
+    "cardName": "Advance to Go (Collect $200)",
+    "action": "move",
+    "moneyValue": 0
+  },
+  {
+    "cardNumber": 1,
+    "cardName": "Bank error in your favor. Collect $200",
+    "action": "getMoney",
+    "moneyValue": 200
+  },
+  {
+    "cardNumber": 2,
+    "cardName": "Doctor’s fee. Pay $50",
+    "action": "payMoney",
+    "moneyValue": 50
+  },
+  {
+    "cardNumber": 3,
+    "cardName": "From sale of stock you get $50",
+    "action": "getMoney",
+    "moneyValue": 50
+  },
+  {
+    "cardNumber": 4,
+    "cardName": "Get Out of Jail Free",
+    "action": "getOutOfJailCard",
+    "moneyValue": 0
+  },
+  {
+    "cardNumber": 5,
+    "cardName": "Go to Jail. Go directly to jail, do not pass Go, do not collect $200",
+    "action": "goToJailCard",
+    "moneyValue": 0
+  },
+  {
+    "cardNumber": 6,
+    "cardName": "Holiday fund matures. Receive $100",
+    "action": "getMoney",
+    "moneyValue": 100
+  },
+  {
+    "cardNumber": 7,
+    "cardName": "Income tax refund. Collect $20",
+    "action": "getMoney",
+    "moneyValue": 20
+  },
+  {
+    "cardNumber": 8,
+    "cardName": "It is your birthday. Collect $10 from every player.",
+    "action": "getMoneyFromAll",
+    "moneyValue": 10
+  },
+  {
+    "cardNumber": 9,
+    "cardName": "Life insurance matures. Collect $100",
+    "action": "getMoney",
+    "moneyValue": 100
+  },
+  {
+    "cardNumber": 10,
+    "cardName": "Pay hospital fees of $100",
+    "action": "payMoney",
+    "moneyValue": 100
+  },
+  {
+    "cardNumber": 11,
+    "cardName": "Pay school fees of $50",
+    "action": "payMoney",
+    "moneyValue": 50
+  },
+  {
+    "cardNumber": 12,
+    "cardName": "Receive $25 consultancy fee.",
+    "action": "getMoney",
+    "moneyValue": 25
+  },
+  {
+    "cardNumber": 13,
+    "cardName": "You are assessed for street repair. $40 per house. $115 per hotel.",
+    "action": "payMoneyPerUpgrade",
+    "moneyValue": 40
+  },
+  {
+    "cardNumber": 14,
+    "cardName": "You have won second prize in a beauty contest. Collect $10",
+    "action": "getMoney",
+    "moneyValue": 10
+  },
+  {
+    "cardNumber": 15,
+    "cardName": "You inherit $100",
+    "action": "getMoney",
+    "moneyValue": 100
+  }
+]

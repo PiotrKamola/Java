@@ -1,5 +1,6 @@
-package com.Monopoly.Monopoly.player;
+package com.Monopoly.Monopoly.Tile;
 
+import com.Monopoly.Monopoly.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,21 +22,7 @@ public class Tile {
     private int tileNumber;
     private boolean isActive;
     private String specialEvent;
-    private String ownerName;
+    private Player owner;
 
-    public static void chanceCard(){
-//        Cards.pullChanceCard();   TODO
-    }
 
-    public static void communityCard(){
-//        Cards.pullCommunityCard();   TODO
-    }
-
-    public static void goToJail(Player player){
-        player.goToJail();
-    }
-
-    public static void payTax(int toPay, Player player){
-        player.payMoney(toPay);
-    }
 }
