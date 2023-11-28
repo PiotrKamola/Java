@@ -1,6 +1,6 @@
-package com.Monopoly.Monopoly.player;
+package com.Monopoly.player;
 
-import com.Monopoly.Monopoly.Tile.Tile;
+import com.Monopoly.Tile.Tile;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +20,7 @@ public class Player {
     private int cardsGettingOutOfJail = 0;
     private int standTile = 0;
     private boolean isPlaying = true;
+
     public Player(String name){
         this.name = name;
     }

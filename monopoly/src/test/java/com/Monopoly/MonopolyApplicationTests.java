@@ -1,4 +1,4 @@
-package com.Monopoly.Monopoly;
+package com.Monopoly;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

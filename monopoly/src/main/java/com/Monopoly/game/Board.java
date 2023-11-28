@@ -1,8 +1,9 @@
-package com.Monopoly.Monopoly.game;
+package com.Monopoly.game;
 
-import com.Monopoly.Monopoly.Tile.Tile;
-import com.Monopoly.Monopoly.Tile.TileService;
-import com.Monopoly.Monopoly.player.Player;
+import com.Monopoly.Bank.Bank;
+import com.Monopoly.Tile.Tile;
+import com.Monopoly.Tile.TileService;
+import com.Monopoly.player.Player;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 
@@ -14,36 +15,27 @@ import java.util.*;
 public class Board {
     private final Bank bank;
     private final TileService tileService;
-    public static List<Tile> board = new ArrayList<>();
-    private static final String TILES_PATH = "src/main/resources/data/tiles.json";
-    private static final ObjectMapper objectMapper = new ObjectMapper();
+    private final CardsService cardsService;
+    private final GameService gameService;
 
-    public Board(Bank bank, TileService tileService){
+    public Board(Bank bank, TileService tileService, CardsService cardsService, GameService gameService){
         this.bank = bank;
         this.tileService = tileService;
-    }
-
-    public static List<Tile> loadBoard() {
-        try {
-            board = Arrays.asList(objectMapper.readValue(Paths.get(TILES_PATH).toFile(), Tile[].class));
-        } catch (IOException e) {
-            e.printStackTrace();
-            board = Collections.emptyList();
-        }
-        return board;
+        this.cardsService = cardsService;
+        this.gameService = gameService;
     }
 
     public void standOnTile(int number, Player player) {
-        Tile tile = board.get(number);
+        Tile tile = gameService.board.get(number);
 
         if (tile.isActive()) {
             String specialEvent = tile.getSpecialEvent();
             if (Objects.equals(specialEvent, "communityCard")) {
                 System.out.println("Take Community Card");
-                tileService.communityCard();
+                cardsService.takeCard("communityCard", player);
             } else if ("chanceCard".equals(specialEvent)) {
                 System.out.println("Take Chance Card");
-                tileService.chanceCard();
+                cardsService.takeCard("chanceCard", player);
             } else if ("payTax".equals(specialEvent)) {
                 System.out.println("Pay Tax");
                 tileService.payTax(tile.getTax().get(0), player);

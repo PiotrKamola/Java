@@ -1,6 +1,6 @@
-package com.Monopoly.Monopoly.Tile;
+package com.Monopoly.Tile;
 
-import com.Monopoly.Monopoly.player.Player;
+import com.Monopoly.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

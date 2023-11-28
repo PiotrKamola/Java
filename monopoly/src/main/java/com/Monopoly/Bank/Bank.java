@@ -1,6 +1,6 @@
-package com.Monopoly.Monopoly.game;
+package com.Monopoly.Bank;
 
-import com.Monopoly.Monopoly.player.Player;
+import com.Monopoly.player.Player;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -11,8 +11,13 @@ public class Bank {
         toWho.setMoney(toWho.getMoney() + howMuch);
     }
 
-    public void payMoney(Player player, int toPaid){
+    public void payMoneyToBank(Player player, int toPaid){
         System.out.println(player.getName() +" pays "+ toPaid + " to the bank.");
         player.setMoney(player.getMoney() - toPaid);
+    }
+
+    public void bankPays(Player player, int toGet){
+        System.out.println("Bank pays "+ toGet + " to player " + player.getName() +".");
+        player.setMoney(player.getMoney() + toGet);
     }
 }

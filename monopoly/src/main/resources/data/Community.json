@@ -32,7 +32,7 @@
   {
     "cardNumber": 5,
     "cardName": "Go to Jail. Go directly to jail, do not pass Go, do not collect $200",
-    "action": "goToJailCard",
+    "action": "goToJail",
     "moneyValue": 0
   },
   {

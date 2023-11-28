@@ -1,7 +1,7 @@
-package com.Monopoly.Monopoly.Tile;
+package com.Monopoly.Tile;
 
-import com.Monopoly.Monopoly.player.Player;
-import com.Monopoly.Monopoly.player.PlayerService;
+import com.Monopoly.player.Player;
+import com.Monopoly.player.PlayerService;
 
 public class Jail {
     private final PlayerService playerService;

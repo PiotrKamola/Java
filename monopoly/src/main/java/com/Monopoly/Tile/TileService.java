@@ -1,8 +1,7 @@
-package com.Monopoly.Monopoly.Tile;
+package com.Monopoly.Tile;
 
-import com.Monopoly.Monopoly.game.Bank;
-import com.Monopoly.Monopoly.player.Player;
-import com.Monopoly.Monopoly.player.PlayerService;
+import com.Monopoly.Bank.Bank;
+import com.Monopoly.player.Player;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -12,18 +11,8 @@ public class TileService {
     TileService(Bank bank){
         this.bank = bank;
     }
-    public static void chanceCard(){
-//        Cards.pullChanceCard();   TODO
-    }
-
-    public static void communityCard(){
-//        Cards.pullCommunityCard();   TODO
-    }
-
-
     public void payTax(int toPay, Player player){
-        bank.payMoney(player, toPay);
-
+        bank.payMoneyToBank(player, toPay);
     }
 
     public void buyProperty(Player player, Tile tile){
@@ -33,7 +22,7 @@ public class TileService {
         }else{
             tile.setActive(true);
             tile.setOwner(player);
-            bank.payMoney(player, tile.getPrice());
+            bank.payMoneyToBank(player, tile.getPrice());
             try{
                 player.getOwnPlaces().add(tile);
             }catch (Exception e){

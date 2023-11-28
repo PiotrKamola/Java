@@ -145,7 +145,7 @@
   },
   {
     "placeName": "Electric Company",
-    "color": "",
+    "color": "Utility",
     "price": 150,
     "tax": [0],
     "upgradeLvl": 0,
@@ -337,7 +337,7 @@
 },
   {
     "placeName": "Water Works",
-    "color": "",
+    "color": "Utility",
     "price": 150,
     "tax": [0],
     "upgradeLvl": 0,
