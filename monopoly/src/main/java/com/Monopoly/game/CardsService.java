@@ -3,8 +3,6 @@ package com.Monopoly.game;
 import com.Monopoly.Bank.Bank;
 import com.Monopoly.player.Player;
 import com.Monopoly.player.PlayerService;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -14,12 +12,10 @@ public class CardsService {
     private final PlayerService playerService;
     private final GameService gameService;
     private final Bank bank;
-    private final Board board;
 
-    public CardsService(PlayerService playerService, Bank bank, Board board, GameService gameService) {
+    public CardsService(PlayerService playerService, Bank bank, GameService gameService) {
         this.playerService = playerService;
         this.bank = bank;
-        this.board = board;
         this.gameService = gameService;
     }
 
@@ -47,7 +43,7 @@ public class CardsService {
                 player.setCardsGettingOutOfJail(player.getCardsGettingOutOfJail() + 1);
                 break;
             case "goToJail":
-                board.goToJail(player);
+                playerService.sendPlayerToJail(player);
                 break;
             case "getMoneyFromAll":
                 for(Player p : gameService.playerList){
@@ -82,7 +78,7 @@ public class CardsService {
                 player.setCardsGettingOutOfJail(player.getCardsGettingOutOfJail() + 1);
                 break;
             case "goToJail":
-                board.goToJail(player);
+                playerService.sendPlayerToJail(player);
                 break;
             case "payEachPlayer":
                 for(Player p : gameService.playerList){

@@ -1,14 +1,14 @@
 package com.Monopoly.player;
 
-import com.Monopoly.game.Board;
+import com.Monopoly.game.BoardService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class PlayerService {
-    private final Board board;
+    private final BoardService boardService;
 
-    public PlayerService(Board board) {
-        this.board = board;
+    public PlayerService(BoardService boardService) {
+        this.boardService = boardService;
     }
 
     public void getOutOfJail(Player player, boolean isPaid) {
@@ -22,25 +22,24 @@ public class PlayerService {
     public void movePlayer(Player player, int numberOfTiles) {
         player.setStandTile(player.getStandTile() + numberOfTiles);
         if (player.getStandTile() > 39) {
-            this.passStart(player);
+            player.setMoney(player.getMoney() + 200);
             player.setStandTile(player.getStandTile() - player.getStandTile() / 10 * 10);
         }
-        board.standOnTile(player.getStandTile(), player);
+        boardService.standOnTile(player.getStandTile(), player);
     }
 
     public void movePlayerToPlace(Player player, int whereToMove) {
         if (player.getStandTile() > whereToMove) {
-            passStart(player);
+            player.setMoney(player.getMoney() + 200);
         }
         player.setStandTile(whereToMove);
-
     }
 
-    public void passStart(Player player) {
-        player.setMoney(player.getMoney() + 200);
+    public void sendPlayerToJail(Player player) {
+        boardService.goToJail(player);
     }
 
-    public void throwDice(Player player) {
+    public void rollDice(Player player) {
         int firstNumber = 0;
         int secondNumber = 0;
         int thirdNumber = 0;
@@ -63,7 +62,7 @@ public class PlayerService {
             System.out.println("Total: " + (thirdNumber + fourthNumber));
             if (thirdNumber == fourthNumber) {
                 System.out.println("Second times double, you are goind to jail.");
-                board.goToJail(player);
+                boardService.goToJail(player);
             } else {
                 movePlayer(player, thirdNumber + fourthNumber);
             }

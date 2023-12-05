@@ -4,21 +4,18 @@ import com.Monopoly.Bank.Bank;
 import com.Monopoly.Tile.Tile;
 import com.Monopoly.Tile.TileService;
 import com.Monopoly.player.Player;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.stereotype.Controller;
 
-import java.io.IOException;
-import java.nio.file.Paths;
 import java.util.*;
 
 @Controller
-public class Board {
+public class BoardService {
     private final Bank bank;
     private final TileService tileService;
     private final CardsService cardsService;
     private final GameService gameService;
 
-    public Board(Bank bank, TileService tileService, CardsService cardsService, GameService gameService){
+    public BoardService(Bank bank, TileService tileService, CardsService cardsService, GameService gameService){
         this.bank = bank;
         this.tileService = tileService;
         this.cardsService = cardsService;
@@ -50,9 +47,11 @@ public class Board {
             tileService.buyProperty(player, tile);
         }
     }
+
     public void goToJail(Player player){
         player.setStandTile(10);
         player.setInJail(true);
         player.setTimeInJail(3);
     }
+
 }
